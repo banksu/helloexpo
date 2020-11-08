@@ -4,7 +4,7 @@ import { Alert } from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
 import axios from "axios";
-import Weather from "./Wether";
+import Weather from "./Weather";
 
 const API_KEY = "82285f0377798034c0c97408840eba6e";
 
@@ -36,7 +36,7 @@ export default class extends React.Component {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
       //Send to API and get weather
-      //console.log(latitude + "//" + longitude);
+      console.log(latitude + "//" + longitude);
       this.getWeather(latitude, longitude);
       this.setState({ isLoading: false });
     } catch (error) {
